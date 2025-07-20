@@ -1,0 +1,620 @@
+/*
+======================================================================
+  CÀI ĐẶT CHUNG & BIẾN
+======================================================================
+*/
+:root {
+    --primary-color: #e67e22;
+    --primary-color-darker: #c0392b;
+    --accent-color: #d9822b;
+    --text-color: #555;
+    --heading-color: #333;
+    --bg-color: #fff;
+    --bg-secondary: #f8f9fa;
+    --white-color: #fff;
+    --card-bg: #fff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --footer-bg: #222;
+    --footer-text: #737373;
+}
+
+/*
+======================================================================
+  THIẾT LẬP CƠ BẢN
+======================================================================
+*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--heading-color);
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+.box-head {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.box-head h2 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.box-head h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 25px auto 0;
+}
+
+.box-head .inner-head {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/*
+======================================================================
+  HEADER
+======================================================================
+*/
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.4s ease;
+}
+
+.header.sticky {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header .inner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .inner-logo {
+    text-decoration: none;
+}
+
+.header .logo {
+    color: var(--primary-color);
+}
+
+.header .inner-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header .inner-menu li {
+    margin-left: 45px;
+}
+
+.header .inner-menu a {
+    color: var(--white-color);
+    font-weight: 400;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.header.sticky .inner-menu a {
+    color: var(--text-color);
+}
+
+.header .inner-menu a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.header-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--white-color);
+    z-index: 1002;
+}
+
+.header.sticky .header-toggle {
+    color: var(--heading-color);
+}
+
+
+/*
+======================================================================
+  CÁC SECTION
+======================================================================
+*/
+.section-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/background.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-1 .inner-wrap h1 {
+    color: var(--white-color);
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.section-1 .button {
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.section-1 .button-one {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.section-1 .button-one:hover {
+    background: var(--primary-color-darker);
+    border-color: var(--primary-color-darker);
+    transform: translateY(-3px);
+}
+
+.section-1 .button-two {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.section-1 .button-two:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-3px);
+}
+
+.section-2 {
+    background-color: var(--bg-secondary);
+}
+
+.section-2 .inner-box {
+    text-align: center;
+    padding: 15px;
+}
+
+.section-2 .inner-icon i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.section-2 .inner-box:hover .inner-icon i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.section-2 .inner-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.section-3 .inner-image {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+
+
+.section-3 .inner-image img {
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: cover;
+
+    opacity: 0.7;
+
+    transform: scale(1.15);
+
+    transition: all 0.5s ease;
+
+}
+
+
+
+.section-3 .inner-image:hover img {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+.section-5 {
+    background-color: var(--bg-secondary);
+}
+
+.section-5 .inner-box {
+    background: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    padding-bottom: 20px;
+}
+
+.section-5 .inner-box:hover {
+    transform: translateY(-5px);
+}
+
+.section-5 .inner-box img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.section-5 .inner-box h3 {
+    font-size: 1rem;
+    padding: 15px 20px 10px 20px;
+    margin: 0;
+}
+
+.section-5 .inner-icon {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    word-break: break-all;
+}
+
+.section-5 .inner-icon i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.section-5 .button-box {
+    margin: 15px 20px 0 20px;
+    padding: 10px;
+    background: var(--primary-color);
+    border-radius: 50px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.section-5 .button-box:hover {
+    background-color: var(--primary-color-darker);
+}
+
+.section-5 .button-box a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+.section-test {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://images.unsplash.com/photo-1511497584788-876760111969?w=800);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white-color);
+}
+
+.section-test .box-head h2 {
+    color: var(--white-color);
+}
+
+.section-test .inner-box {
+    padding: 20px;
+}
+
+.section-test blockquote {
+    font-style: italic;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+    color: var(--white-color) !important;
+}
+
+.section-test blockquote::before {
+    content: "\201C";
+    font-size: 4rem;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    color: var(--primary-color);
+}
+
+.section-test .user {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.section-test .user img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+.section-test .user p {
+    color: var(--white-color);
+}
+
+.address {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.address .inner-head h2,
+.address .inner-head p {
+    text-align: center;
+}
+
+.address .inner-address iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/*
+======================================================================
+  FOOTER
+======================================================================
+*/
+.site-footer {
+    background-color: var(--footer-bg);
+    padding: 60px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--footer-text);
+}
+
+.site-footer .footer-widget h4 {
+    color: var(--white-color);
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.site-footer .footer-widget h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.site-footer a {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--accent-color);
+}
+
+.footer-links,
+.social-icons {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-about p {
+    text-align: left;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+}
+
+.copyright-text {
+    margin: 0;
+    text-align: center;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/*
+======================================================================
+  NÚT BẤM MESSENGER (THEO MẪU)
+======================================================================
+*/
+.message-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #006aff, #00aaff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.message-button i {
+    color: #fff;
+    font-size: 28px;
+}
+
+/*
+======================================================================
+  RESPONSIVE
+======================================================================
+*/
+@media (max-width: 991px) {
+    .header .inner-menu {
+        display: none;
+    }
+
+    .header .header-toggle {
+        display: block;
+    }
+
+    .header .inner-menu.is-open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1001;
+    }
+
+    .header .inner-menu.is-open li {
+        margin: 20px 0;
+    }
+
+    .header .inner-menu.is-open a {
+        font-size: 2rem;
+        color: var(--heading-color);
+    }
+
+    .header-toggle.is-active {
+        position: fixed;
+        top: 20px;
+        right: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .box-head h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-1 .inner-wrap h1 {
+        font-size: 2rem;
+    }
+
+    .section-1 .button {
+        display: block;
+        margin: 15px auto;
+        width: 220px;
+    }
+
+    .section-test blockquote::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-test .user {
+        justify-content: center;
+    }
+
+    .site-footer .footer-widget {
+        text-align: center;
+    }
+
+    .site-footer .footer-widget h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-about p {
+        text-align: center;
+    }
+}
